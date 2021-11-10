@@ -48,11 +48,12 @@ void switch_interrupt_handler(){
 void
 _interrupt_vec(WDT_VECTOR) WDT(){
   if (sw1Down == 1){
-    buzzer_set_period(800);
+    playSong();
     P1OUT |= LED_GREEN;
   }
   else if (sw2Down == 1){
-    buzzer_set_period(900);
+    P1OUT |= LED_RED;
+    P1OUT |= LED_GREEN
   }
   else if (sw3Down == 1){
     buzzer_set_period(1000);
@@ -62,5 +63,6 @@ _interrupt_vec(WDT_VECTOR) WDT(){
   }
   else if (sw1Down == 1 && sw2Down == 1){
     buzzer_set_period(0);
+    P1OUT &= ~LED_GREEN;
     P1OUT &= ~LED_GREEN;
   }

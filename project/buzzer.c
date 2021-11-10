@@ -30,14 +30,49 @@ _interrupt_vec(WDT_VECTOR) WDT()  // 250 interrupts/sec
   }
 }
 
-void play_sounds(){
+void play_song(){
   int seconds = 0;
+
+  float e_flat = 57723.72272;
+  float d_flat = 51425.91197;
+  float c_flat = 64792.64733;
   
   if (secondCount == 2){
-    buzzer_set_period(50);
+    buzzer_set_period(e_flat); //e flat
     seconds++;
   }
-  seconds = 0;
+  else if (secondCount == 3){
+    buzzer_set_period(d_flat); //d flat
+    seconds++;
+  }
+  else if (secondCount == 4){
+    buzzer_set_period(e_flat); //e flat
+    seconds++;
+  }
+  else if (secondCount == 5){
+    buzzer_set_period(d_flat);
+    seconds++;
+  }
+  else if (secondCount == 6){
+    buzzer_set_period(e_flat);
+    seconds++;
+  }
+  else if (secondCount == 7){
+    buzzer_set_period(d_flat);
+    seconds++;
+  }
+  else if (secondCount == 8){
+    buzzer_set_period(e_flat);
+    seconds++;
+  }
+  else if (secondCount == 9){
+    buzzer_set_period(c_flat);
+    seconds++;
+  }
+  else{
+    buzzer_set_period(0);
+  }
 }
 
 //call method for blink sequence 1/250th of second since it counts a second
+
