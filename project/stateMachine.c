@@ -17,7 +17,7 @@ char light_intensity_state(int blinkCount){
   if (blinkCount % 250 ==0){
     intensity_state = (intensity_state % 4) + 1;
   }
-  retern intensity_state;
+  return intensity_state;
 }
 
 void light_25(int state){
